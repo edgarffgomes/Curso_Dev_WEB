@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript 6</title>
+	</head>
+	<body>
+
+		<script>
+			//Gerando função assíncrona com 3 segundos de timeout
+			let processo_assincrono = new Promise((resolve, reject) => {
+				setTimeout(() => resolve('Sucesso na função assíncrona'), 3000)
+			})
+
+			//recuperando retorno por meio do then e imprimindo-os no console
+			//utilizando a marcação async, a função poderá aguardar pelos processamentos assíncronos das Promises
+			//Ao utilizar a marcação async numa função, a própria também se torna uma Promise
+			async function recuperarDados(){
+				//utilizando a marcação await, a função terá que aguardar a resolução do processamento assíncrono (no caso, a Promise)
+				await processo_assincrono.then(p =>  console.log(p))
+
+				console.log('Processamento assíncrono 1')
+
+				//Fetch é utilizado para auxiliar nas requisições HTTP e retorna uma Promise
+				//recuperando um serviço de API fake para testar async/await
+				await fetch('http://jsonplaceholder.typicode.com/comments')
+				// convertendo resposta HTTP para JSON
+				.then( r => r.json())
+				//imprimindo o JSON
+				.then(d => console.log('Comentários: ', d))
+
+				console.log('Processamento assíncrono 2')
+
+				await fetch('http://jsonplaceholder.typicode.com/posts')
+				.then( r => r.json())
+				.then(d => console.log('Posts: ', d))
+				console.log('Processamento assíncrono 3')
+
+				return 'Fim'
+			}
+
+			//realizando a impressão de 'Fim' após a execução da função assíncrona
+			recuperarDados().then((p) => console.log(p))
+			
+		</script>
+	</body>
+</html>
