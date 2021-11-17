@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Javascript</title>
+		
+		
+		
+	</head>
+	<body>
+		
+
+		<script>
+
+			var listaFuncionarios = Array('Fernando', 'Marta', 'Thomas', 'Jorge', 'Anna')
+			console.log(listaFuncionarios)
+			document.write(listaFuncionarios[3])
+
+			var f =(function(valor, indice, array){
+
+				console.log('Índice ' + indice + ' | valor ' + valor)
+
+			})
+
+			listaFuncionarios.forEach(f)
+
+			//forEach() funciona apenas com índices numéricos
+
+		</script>
+	</body>
+</html>

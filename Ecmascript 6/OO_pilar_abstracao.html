@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+			//modelo de entidade/objeto
+			class ContaBancaria{
+				//agencia
+				//numeroConta
+				//saldo
+				//limite
+				constructor(){
+					this.agencia = 1075
+					this.numeroConta = 8312471
+					this.saldo = 50
+					this.limite = 600
+				}
+
+				depositar(valorDeposito){
+					this.saldo += valorDeposito;
+				}
+
+				sacar(saque){
+					this.saldo -= saque;
+				}
+
+				consultarSaldo(){
+					return this.saldo
+				}
+			}
+
+			let x = new ContaBancaria()
+			let y = new ContaBancaria()
+
+			console.log(x.consultarSaldo())
+			x.depositar(80)
+			console.log(x.consultarSaldo())
+			x.sacar(70)
+			console.log(x.consultarSaldo())
+			
+		</script>
+	</body>
+</html>

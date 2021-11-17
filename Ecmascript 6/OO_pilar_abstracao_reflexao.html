@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+			
+			//software marcenaria
+			//cadeira e sofá
+
+			//cadeira
+			/*let qtde_pernas = 4
+			let giratoria = false
+			let cor = 'azul' */
+
+			//array de cadeiras
+			/*let cadeiras = Array()
+			cadeiras[0] = Array()
+
+			cadeiras[0]['qtde_pernas'] = 4
+			cadeiras[0]['giratoria'] = true
+			cadeiras[0]['cor'] = 'vermelha'
+
+			cadeiras[1] = Array()
+			cadeiras[1]['qtde_pernas'] = 1
+			cadeiras[1]['giratoria'] = false
+			cadeiras[1]['cor'] = 'verde'
+
+			function girarCadeira(indice){
+				if(cadeiras[indice]['giratoria'] == true){
+					console.log('Cadeira girou!')
+				} else {
+					console.log('A cadeira não é giratória')
+				}
+			}
+			//girarCadeira(0)
+
+			function adicionarCadeira(qtde_pernas, giratoria, cor){
+				let cadeira = Array()
+
+				cadeira['qtde_pernas'] = qtde_pernas
+				cadeira['giratoria'] = giratoria
+				cadeira['cor'] = cor
+
+				cadeiras.push(cadeira)
+			}
+			adicionarCadeira(3, true, 'rosa')
+
+			console.log(cadeiras) */
+
+			//paradigma OO
+
+			class Cadeira {
+
+				constructor(qtde_pernas, giratoria, cor){
+					this.qtde_pernas = qtde_pernas
+					this.giratoria = giratoria
+					this.cor = cor
+				}
+
+				GirarCadeira(){
+					if(this.giratoria == true){
+						console.log('Girou')
+					} else{
+						console.log('A cadeira não é giratória')
+					}
+				}
+			}
+
+			/* let cadeira1 = new Cadeira(4, false, 'amarela')
+
+			cadeira1.GirarCadeira()
+
+			let cadeira2 = new Cadeira(3, true, 'azue')
+
+			cadeira2.GirarCadeira() */
+
+			let cadeiras = Array()
+
+			cadeiras.push(new Cadeira(5, false, 'Roxa'))
+			cadeiras.push(new Cadeira(1, true, 'Branca'))
+
+			console.log(cadeiras)
+
+		</script>
+	</body>
+</html>

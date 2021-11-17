@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		
+
+      
+
+  		<script>
+
+        let promessas = new Promise((resolve, reject)=>{
+
+          //requisição http para recuperar uma relação de usuários
+          setTimeout(()=>{
+
+            //requisição realizada de algum modo
+            let resposta_da_requisicao = {}
+
+            //erro na requisacao
+            if(false){
+              resposta_da_requisicao = {
+                codigo: 1050,
+                mensagem: 'Falha de autorização'
+              }
+              reject(resposta_da_requisicao)
+            }
+            
+              resposta_da_requisicao = {
+                0: {id: 0, nome_usuario: 'João'},
+                1: {id: 1, nome_usuario: 'José'},
+                2: {id: 2, nome_usuario: 'Maria'},
+              }
+              resolve(resposta_da_requisicao)
+          },  4000)
+        }).then(dados =>{
+          console.log(dados)
+           })
+      .then(()=>{
+          console.log('Then 2')
+          return 'Parametro para o then 3'
+        }).catch(erro => {
+          console.log('Operação sequencial (catch): ', erro)
+        }).then(param=>{
+          console.log('then 3 ', param)
+        })
+      </script> 
+
+  </body>

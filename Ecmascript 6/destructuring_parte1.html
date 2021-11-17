@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+
+			//destructuring
+			let frutas = ['Abacaxi', 'Uva', 'Pêra', 'Maracujá']
+			let [a, b = 'Kiwi', c, d, e = 'Manga'] = frutas
+			//console.log(a, b, c, d , e)
+			let coisas = [['Abacaxi', 'Uva', 'Pêra', 'Maracujá'], ['josé', 'maria']]
+			let [, [, x]] = coisas
+			console.log(x)
+			let [[, , z]] = coisas
+			console.log(z)
+
+
+		</script>
+	</body>
+</html>

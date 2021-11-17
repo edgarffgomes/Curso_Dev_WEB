@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		
+
+        <div id="teste">
+            Resposta: <input type="text" id="resposta">
+            <button type="button" onclick="acao()">Avançar</button>
+        </div>
+
+		<script>
+
+          function* conversar(){
+            let frases = Array()
+            insereFrases(frases) 
+
+              //1 bloco
+              //opcao recebe o parâmetro encaminhado no next seguinte
+             let opcao = yield 'Olá, tudo bem?'
+          
+             //2 bloco
+             //o parâmetro enviado no next será utilizado como resposta
+             if(opcao == 'SIM'){
+              yield 'Ótimo, fico feliz!'
+
+              opcao = yield 'Como posso lhe ajudar? Quer uma frase da sorte antes de começar?'
+              if(opcao == 'SIM'){
+                let f = frases[(Math.floor(Math.random() * frases.length))]
+                yield f
+                opcao = yield 'OK. Digite 1 para compras, 2 para vendas ou 3 para falar com o atendente!'
+                yield finalizarAtendimento(opcao)
+                
+
+              } else {
+                  opcao = yield 'OK. Digite 1 para compras, 2 para vendas ou 3 para falar com o atendente!'
+                  yield finalizarAtendimento(opcao) 
+              }
+            }
+            else{
+              yield 'Respire fundo e tenha calma!'
+
+              opcao = yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com o atendente!'
+              yield finalizarAtendimento(opcao)        
+          }
+        }
+
+          
+
+          let conversa = conversar()
+          console.log(conversa) //objeto iterator
+
+         
+
+          function acao(){
+            let resposta = document.getElementById('resposta').value
+            resposta = resposta.toUpperCase()
+            let iteracao = conversa.next(resposta)
+            console.log(iteracao)
+          }
+
+            function insereFrases(frases){
+            frases.push(`"O elogio que vem daquele que merece o elogio está acima de todas as recompensas."" - J.R.R. Tolkien`)
+
+            frases.push(`"São nossas escolhas que mostram o que realmente somos, mais do que nossas habilidades." - J.K. Rowling`)
+
+            frases.push(`"O medo corta mais profundamente que espadas." - George R. R. Martin`)
+
+            frases.push(`"O falar não se restringe ao ato de emitir palavras, mas de poder existir." - Djamila Ribeiro`)
+
+            frases.push(`"Não podemos confiar em nós mesmo nem em nossos melhores momentos. Por outro lado, não devemos nos desesperar nem mesmo nos piores, pois nossos fracassos são perdoados. A única atitude fatal é se dar por satisfeito com qualquer coisa que não a perfeição." - C.S. Lewis`)
+
+          
+          }
+
+          function finalizarAtendimento(opcao){
+
+            switch(opcao){
+                  case '1':
+                    return 'Ok, irei te redirecionar para o setor de compras. Tenha um bom dia!'
+                    break;
+
+                   case '2':
+                    return 'Ok, irei te redirecionar para o setor de vendas. Tenha um bom dia!'
+                    break;
+
+                   case '3':
+                    return 'Ok, irei te redirecionar para o atendente. Tenha um bom dia!'
+                    break;
+
+                  default:
+                    return 'Opção inválida!'
+                }
+          }
+		</script>
+	</body>
+</html>

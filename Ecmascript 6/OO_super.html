@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+			class Animal{
+
+				constructor(cor, tamanho, peso){
+					this.cor = cor
+					this.tamanho = tamanho
+					this.peso = peso
+				}
+				dormir(){
+					console.log('Dormiu')
+				}			
+			}
+
+			
+
+			class Passaro extends Animal{
+				constructor(bico, cor, tamanho, peso){
+					super(cor, tamanho, peso)
+					this.bico = bico
+				}
+
+				voar(){
+					console.log('Voou')
+				}
+			}
+
+			class Papagaio extends Passaro{
+				constructor(fala, cor, tamanho,peso){
+					super('Médio',cor, tamanho,peso)
+					this.fala = fala
+				}
+				falar(){
+					if(this.fala === true){
+						console.log('O papagaio falou')
+					}
+					else{
+						console.log('Ele não sabe falar!')
+					}
+				}
+			}
+
+			class Avestruz extends Passaro{
+				constructor(){
+					super('Grande', 'Branco', 180, 15000)
+				}
+				enterrarCabeca(){
+					console.log('Enterrou a cabeca')
+				}
+				voar(){
+					console.log('Avestruz não voa!')
+				}
+			}
+
+			
+			let papagaio = new Papagaio(true, 'verde', 15, 300)
+
+			console.log(papagaio)
+
+			papagaio.voar()
+
+			let avestruz = new Avestruz()
+			avestruz.voar()
+
+		</script>
+	</body>
+</html>

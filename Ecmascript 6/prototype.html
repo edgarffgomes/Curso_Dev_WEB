@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+
+			//avião
+
+
+			//objeto literal
+			let a1 = {
+				cor: 'branco',
+				modelo: 'Airbus 380',
+				levantarVoo: function(){
+					console.log('Voando!')
+				}
+
+			}
+
+			//função construtora
+			let AviaoF = function(){
+				this.cor = 'Azul',
+				this.modelo = 'Boeing 787',
+				this.levantarVoo = function (){
+					console.log('Voou!')
+				}
+			}
+			
+			let a2 = new AviaoF ()
+
+			//classe
+
+			class AviaoC{
+				constructor(){
+					this.cor = 'vermelho'
+					this.modelo = 'Embraer E-Jets'
+					}
+
+					levantarVoo(){
+						console.log('Planando!')
+					}
+			}
+	
+
+			let a3 = new AviaoC
+
+			console.log(a1)
+			console.log(a2)
+			console.log(a3)
+
+			
+		</script>
+	</body>
+</html>

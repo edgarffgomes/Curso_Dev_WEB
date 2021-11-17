@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+
+			let Carro = function(){
+
+				this.cor = 'Amarelo'
+				this.modelo = 'Gol'
+				this.velocidadeAtual = 0
+				/*setar a velocidade como variável da função ajuda no encapsulamento,
+				 pois impede que meios externos à função construtora acessem seu valor */
+				var velocidadeMaxima = 180
+				var kmRodados = 0
+				this.acelerar = function(){
+					let velocidade = this.getVelocidadeAtual() + 50
+					if(velocidade> velocidadeMaxima){
+						velocidade = velocidadeMaxima
+						this.setVelocidadeAtual(velocidade)
+					}
+					else{
+						this.setVelocidadeAtual(velocidade)
+					}
+				}
+				this.getVelocidadeAtual =  function(){
+					return this.velocidadeAtual
+				}
+
+				this.setVelocidadeAtual =  function(velocidadeAtual){
+					this.velocidadeAtual = velocidadeAtual
+					setKmRodados(0.07)
+					console.log(kmRodados)
+
+				}
+				var setKmRodados = function(q){
+					kmRodados += q
+					}
+
+			}
+
+			let carro = new Carro()
+
+			console.log(carro.velocidadeAtual)
+
+			carro.acelerar()
+			carro.acelerar()
+			carro.acelerar()
+			carro.acelerar()
+			carro.acelerar()
+			carro.acelerar()
+
+
+			
+
+
+
+			
+		</script>
+	</body>
+</html>

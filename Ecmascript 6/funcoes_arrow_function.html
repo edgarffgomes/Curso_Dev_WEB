@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+			
+			/*let quadrado = function(numero = 5){
+				return numero * numero
+			}*/
+			//o uso de parenteses não é necessário caso haja apenas um parâmetro
+			/*let quadrado = (x) => x*x //return implícito
+
+			document.write(quadrado(3))*/
+
+			/*let parOuImpar = function (numero){
+				if( numero % 2 === 0){
+					return 'par'
+				}
+				else{
+					return 'ímpar'
+				}
+			}*/
+
+			/* let parOuImpar = numero => {
+				if( numero % 2 === 0){
+					return 'par'
+				}
+				else{
+					return 'ímpar'
+				}
+			} */
+
+			let parOuImpar = numero => numero % 2 === 0 ? 'par' : 'impar' //return implicito
+
+			document.write(parOuImpar(28))
+
+			
+		</script>
+	</body>
+</html>

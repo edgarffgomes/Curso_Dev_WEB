@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+
+			//contexto spread
+			//string
+			let tituloArtigo = 'Como utilizar o operador rest/spread'
+
+			console.log(tituloArtigo)
+			console.log(...tituloArtigo)
+			console.log([...tituloArtigo])
+
+			//arrays
+			listaCursos1 = Array('js e mongodb', 'typescript ES6 e angular 4')
+			listaCursos2 = Array('Android/IOS', 'Windows/Linux')
+			let listaCursosCompleto = ['WEB completo', 'Android completo', ...listaCursos1, ...listaCursos2]
+			console.log(listaCursosCompleto)
+
+			//objeto literal
+			let pessoa = { nome: 'Joao', idade: 27}
+			let clone = {endereco: 'Rua Carmen', ...pessoa}
+			console.log(clone)
+		</script>
+	</body>
+</html>

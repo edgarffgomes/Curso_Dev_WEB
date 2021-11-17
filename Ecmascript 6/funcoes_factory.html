@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+
+			let Bicicleta1 = {
+				cor: 'Branca',
+				marche: 'Única',
+				Aro: 12,
+				pedalar(){
+					console.log('Pedalar!')
+				}
+			}
+
+			let Bicicleta2 = {
+				cor: 'Preta',
+				marche: '18',
+				Aro: 26,
+				pedalar(){
+					console.log('Pedalar!')
+				}
+			}
+			console.log(Bicicleta1)
+			console.log(Bicicleta2)
+
+			let BicicletaFactory = function(cor, marcha, aro){
+				return{
+					cor,
+					marcha,
+					aro,
+					pedalar(){
+					console.log('Pedalar!')
+					}
+				}
+			}
+
+			bicicleta3 = BicicletaFactory('Vermelha', '18', 32)
+			console.log(bicicleta3)
+			console.log(bicicleta3.cor)
+
+
+			
+		</script>
+	</body>
+</html>

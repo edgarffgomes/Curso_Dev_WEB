@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		
+		<div id="teste"></div>
+
+		<script>
+
+            function* testeGenerator(){
+               yield 'teste 1'
+				//o comando yield fará com que a variável que recebe a função receba tudo até aquele ponto do código
+                yield 'teste 2'
+                yield 'teste 3'
+
+                return 'teste 4'
+
+            }
+
+            let meuGenerator = testeGenerator() //a variável recebe um objeto iterator
+
+
+			console.log(meuGenerator.next())
+			console.log('-----')
+
+			console.log(meuGenerator.next())
+			console.log('-----')
+
+			console.log(meuGenerator.next())
+			console.log('-----')
+
+			//o retorno terá o valor intituído pela função e o estado de execução da função generator
+			console.log(meuGenerator.next())
+			
+			
+		</script>
+	</body>
+</html>

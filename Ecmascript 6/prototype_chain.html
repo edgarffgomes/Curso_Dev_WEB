@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+
+			//object.prototype
+
+			Object.prototype.attr50 = 'z' //cuidado, pois o atributo será global
+			let animal = {
+				attr1: 'a'
+			}
+
+			let vertebrado = {
+				__proto__: animal,
+				attr2: 'b'
+			}
+			let ave = {
+				__proto__: vertebrado,
+				attr2: 'x',
+				attr3: 'c'
+			}
+
+			console.log(ave.attr3,ave.attr2, vertebrado.attr1, ave.attr50)
+			
+		</script>
+	</body>
+</html>

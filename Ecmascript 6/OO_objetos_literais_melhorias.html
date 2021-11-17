@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+		
+			let nome = 'Jorge'
+			let idade = 59
+			let sexo = 'masculino'
+			let profissao = 'programador'
+
+			let objeto = {
+				//caso o nome da dos atributos do objetos literais sejam iguais aos nomes do escopo global, não é necessário fazer atribuições
+				nome,
+				sexo,
+				idade,
+				profissao,
+				exibirResumo: function(){
+					console.log(`${this.nome}, ${this.idade} anos, sexo ${this.sexo} é ${this.profissao}`)
+				}
+			}
+			objeto.exibirResumo()
+		
+		</script>
+	</body>
+</html>

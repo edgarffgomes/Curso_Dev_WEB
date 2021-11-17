@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Javascript</title>
+		<script>
+			//a principal diferença entre onkeypress e onkeydown é que o onkeypress só é disparado por teclas do tipo caractere
+
+			function acao1(){
+				alert('Disparando tecla')
+			}
+			function acao2(){
+				alert('Disparando tecla do tipo caractere')
+			}
+			function acao3(){
+				alert('Tecla disparada!')
+			}
+			
+
+
+		</script>
+		
+	</head>
+	<body>
+
+		<input onkeydown="acao1()" onkeypress="acao2()" onkeyup="acao3()" type="text" >
+
+
+
+		
+	</body>
+</html>

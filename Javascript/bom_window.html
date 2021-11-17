@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Javascript</title>
+		
+	</head>
+	<body>
+		<button onclick="abrirPopUp()">Abrir janela</button>
+
+		<button onclick="fecharPopUP()">Fechar janela</button>
+
+		<button onclick="window.print()">Imprimir página</button>
+
+		
+		<script>
+
+			var janela
+
+
+			function abrirPopUp(){
+				janela = window.open('https://accounts.google.com/Login?hl=pt-br', 'Nova_janela', 'width = 600, height = 500')
+			}
+
+			function fecharPopUp(){
+				janela.close()
+			}
+
+		</script>
+	</body>
+</html>

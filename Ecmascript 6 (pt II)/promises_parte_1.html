@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		
+
+      
+
+  		<script>
+
+        //requisições http
+        let resposta = {}
+        let promessa = new Promise((resolve, reject) => {
+
+          try{
+            //throw new Error('Opa, houve um erro!')
+
+            setTimeout(() =>{
+              resposta = {dados: {msg: 'Recuperamos os dados com sucesso!'} }
+             resolve('Sucesso!')
+            }, 3000)
+
+          }catch(e){
+            setTimeout(() =>{
+              reject(e)
+            }, 3000)
+          }
+
+        })
+
+        setTimeout (() =>{
+          console.log(promessa)
+          console.log(resposta)
+        }, 8000)
+
+      </script>
+
+  </body>

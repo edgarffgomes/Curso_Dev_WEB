@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript</title>
+		
+	</head>
+	<body>
+		<div id="output">
+		</div>
+		
+
+		<script>
+
+			//contexto rest
+			//o param receberá os parâmetros em formato de Array, de forma dinâmica
+			function soma(...param) {
+				let resultado = 0
+				console.log(param)
+				param.forEach (v => resultado += v)
+				return resultado
+			}
+
+			console.log(soma(3,8,5,7, -8, 9, 33, 80))
+
+			function multiplicacao(m, ...p){
+				console.log(m)
+				let resultado = 0
+				console.log(p)
+				p.forEach(v => resultado += m*v)
+				return resultado
+
+			}
+
+			console.log(multiplicacao(5,3,12, 75))
+		</script>
+	</body>
+</html>
