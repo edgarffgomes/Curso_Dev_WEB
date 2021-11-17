@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript 6</title>
+	</head>
+	<body>
+
+		<script>
+			let objeto = {
+				nome: "Edgar",
+				profissional: {
+					site: 'https://www.linkedin.com/in/edgar-gomes-678b61163/',
+					profissao: 'Estudante',
+				},
+
+				hobbies: [
+					{ id: 1, hobby: 'Ler livros' },
+					{ id: 2, hobby: 'Ouvir músicas' },
+				],
+
+				pais: 'Brasil',
+			}
+/*
+			//descritores de propriedades
+			console.log(Object.getOwnPropertyDescriptors(objeto))
+
+			//--
+			//--
+			//Descritor Writable: Caso seja definido como false, o valor da propriedade não poderá ser alterado
+			//ex.:
+			Object.defineProperty(objeto, 'nome',{
+				value: 'Francisco',
+				writable: false
+			})
+			console.log(Object.getOwnPropertyDescriptors(objeto))
+
+			//--
+			//--
+			//Descritor enumerable: Caso seja definido como false, o valor da propriedade não é exibido em laços de repetição
+			//ex.:
+			Object.defineProperty(objeto, 'hobbies',{
+				enumerable: false
+			})
+
+			console.log(Object.getOwnPropertyDescriptors(objeto))
+
+			for (let propriedade in objeto){
+				console.log(objeto[propriedade])
+			} */
+
+			//--
+			//--
+			/*Descritor configurable: Cajo seja definido como false, a propriedade não poderá ser deletada.
+			Ele também não permitirá a mudança dos outros descritores (com exceção do writable para false)*/
+			Object.defineProperty(objeto, 'pais',{
+				configurable: false
+			})
+
+			console.log(Object.getOwnPropertyDescriptors(objeto))
+
+			
+
+		</script>
+	</body>
+</html>
