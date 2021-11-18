@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ecmascript 6</title>
+	</head>
+	<body>
+
+		<script>
+		
+			//asynchronous iterations são uma forma de combinar async/await com laços de repetição
+			let processos = [1,2,3,4,5]
+			let iteracaoAssincrona = async () => {
+
+				for (let processo of processos){
+				//processamentos assíncronos
+				//utilizando a notação await, a estrutura de repetição irá aguardar o processamento da Promise para dar prosseguimento aos loops
+				await new Promise((resolve, reject) => {
+					setTimeout(() =>{
+						console.log('Processamento assíncrono')
+						resolve()
+					}, 2000)
+				})
+
+				console.log(processo)
+			}
+		}
+
+		iteracaoAssincrona()
+
+			 
+
+
+		</script>
+	</body>
+</html>
